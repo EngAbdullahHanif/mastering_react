@@ -24,11 +24,12 @@ function BookList() {
 }
 
 const Book = (props) => {
+  const {img, author, title} =  props;
   return (
     <article>
-      <img src={props.img} />
-      <h1>{props.author}</h1>
-      <h4>{props.title}</h4>
+      <img src={img} />
+      <h1>{author}</h1>
+      <h4>{title}</h4>
     </article>
   );
 };
