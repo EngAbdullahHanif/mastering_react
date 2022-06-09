@@ -1,30 +1,33 @@
 import React from "react";
 import ReactDom from "react-dom";
 
-const firstBook = {
-  img: "https://images-na.ssl-images-amazon.com/images/I/71l9pCV99FL._AC_UL906_SR906,600_.jpg",
-  author: "Colleen Hoover",
-  title: "It Ends with Us: A Novel (1)"
-}
-
-const secondBook = {
-  img: "https://images-na.ssl-images-amazon.com/images/I/71l9pCV99FL._AC_UL906_SR906,600_.jpg",
-  author: "Colleen Hoover",
-  title: "It Ends with Us: A Novel (1)"
-}
+const books = [
+  {
+    img: "https://images-na.ssl-images-amazon.com/images/I/71l9pCV99FL._AC_UL906_SR906,600_.jpg",
+    author: "Colleen Hoover",
+    title: "It Ends with Us: A Novel (1)"
+  }
+  ,
+  {
+    img: "https://images-na.ssl-images-amazon.com/images/I/71l9pCV99FL._AC_UL906_SR906,600_.jpg",
+    author: "Colleen Hoover",
+    title: "It Ends with Us: A Novel (1)"
+  }
+];
 
 
 function BookList() {
   return(
     <section>
-      <Book img={firstBook.img} author={firstBook.author} title={firstBook.title} />
-      <Book img={secondBook.img} author={secondBook.author} title={secondBook.title} />
+     {books.map((book) => {
+       return <Book book={book}></Book>
+     })}
     </section>
     );
 }
 
 const Book = (props) => {
-  const {img, author, title} =  props;
+  const {img, author, title} =  props.book;
   return (
     <article>
       <img src={img} />
